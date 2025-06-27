@@ -702,6 +702,61 @@
   },
   {
     "identidad": {
+      "id": "juan-pintura",
+      "nombre": "Juan Pintura",
+      "slogan": "Tu casas re pintadas",
+      "categoria": "Inmueble",
+      "tipo": "Pintor",
+      "genero": "masculino",
+      "paletaColores": [
+        "#006A71",
+        "#48A6A7"
+      ]
+    },
+    "general": {
+      "acerca": "",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "",
+        "title": "",
+        "text": ""
+      }
+    ],
+    "contacto": {
+      "redesSociales": [],
+      "ubicacion": [
+        {
+          "label": "Horacio",
+          "link": "https://maps.app.goo.gl/Auy7mtCyi5Yw5EDC9"
+        }
+      ],
+      "emails": [
+        {
+          "email": "juanpintor@gmail.com",
+          "primario": true
+        }
+      ],
+      "telefonos": [
+        {
+          "telefono": "999 999 999",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "p7",
+      "status": "activo",
+      "comprados": {
+        "mink": true
+      },
+      "alianza": "2025-06-27"
+    }
+  },
+  {
+    "identidad": {
       "id": "kc-construcciones",
       "nombre": "K.C Construcciones",
       "slogan": "Edificando calidad, superando expectativas.",
