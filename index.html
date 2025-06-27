@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../favicon.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      font-family: 'Montserrat', sans-serif;
+    }
+    :root {
+     --white-smoke: #F2F2F2;
+     --seashell: #F2EFE7;
+     --light-blue: #9ACBD0;
+     --cadet-blue: #48A6A7;
+     --teal: #006A71;
+     --ebony: #0D0D0D;
+    }
+
+    /* Estilos personalizados para Montserrat */
+    .font-light { font-weight: 300; }
+    .font-normal { font-weight: 400; }
+    .font-medium { font-weight: 500; }
+    .font-semibold { font-weight: 600; }
+    .font-bold { font-weight: 700; }
+    .font-extrabold { font-weight: 800; }
+    .font-black { font-weight: 900; }
+
+    /* Colores personalizados de Tailwind usando variables CSS */
+    .bg-white-smoke { background-color: var(--white-smoke); }
+    .text-white-smoke { color: var(--white-smoke); }
+    .bg-seashell { background-color: var(--seashell); }
+    .text-seashell { color: var(--seashell); }
+    .bg-light-blue { background-color: var(--light-blue); }
+    .text-light-blue { color: var(--light-blue); }
+    .bg-cadet-blue { background-color: var(--cadet-blue); }
+    .text-cadet-blue { color: var(--cadet-blue); }
+    .bg-teal { background-color: var(--teal); }
+    .text-teal { color: var(--teal); }
+    .bg-ebony { background-color: var(--ebony); }
+    .text-ebony { color: var(--ebony); }
+    .border-ebony { border-color: var(--ebony); }
+    .focus\\:border-teal:focus { border-color: var(--teal); }
+    .hover\\:bg-teal:hover { background-color: var(--teal); }
+    .hover\\:text-teal:hover { color: var(--teal); }
+    .active-tab {
+        border-bottom: 2px solid var(--teal);
+        color: var(--teal);
+    }
+    .icon-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        gap: 8px;
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid var(--seashell);
+        padding: 8px;
+        border-radius: 4px;
+        background-color: var(--seashell);
+    }
+    .icon-grid span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        transition: background-color 0.2s, border-color 0.2s;
+    }
+    .icon-grid span:hover {
+        background-color: var(--light-blue);
+        border-color: var(--teal);
+    }
+    .icon-grid span.selected {
+        background-color: var(--light-blue);
+        border-color: var(--teal);
+        box-shadow: 0 0 0 2px var(--teal);
+    }
+    .modal-overlay {
+      background-color: rgba(13, 13, 13, 0.75); /* var(--ebony) con opacidad */
+    }
+    /* Asegurar que los tabs no se vean afectados por el scroll del contenido del modal */
+    .modal-content-wrapper {
+        flex-grow: 1; /* Permite que este div ocupe el espacio restante */
+        overflow-y: auto; /* Aquí se aplica el scroll */
+    }
+    /* Estilo para el botón de guardar con ancho fijo */
+    #saveCompanyBtn.saving {
+      width: 120px; /* Ancho fijo para evitar redimensionamiento */
+      text-align: center;
+      justify-content: center;
+      display: flex;
+    }
+    #saveCompanyBtn.saving .iconify {
+        margin-right: 0; /* Eliminar margen del ícono cuando solo hay ícono */
+    }
+
+    .company-card .delete-company-btn, .company-card .whatsapp-company-btn {
+        min-width: 40px; /* Ancho mínimo para el botón */
+        flex-grow: 1; /* Permite que los botones crezcan */
+        padding: 8px; /* Ajustar padding */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .company-card .delete-company-btn {
+        margin-left: 0.5rem; /* Espacio entre el botón de WhatsApp y el de eliminar */
+    }
+
+
+    .company-card .delete-company-btn .iconify,
+    .company-card .whatsapp-company-btn .iconify {
+        margin-right: 0; /* Eliminar margen si solo hay icono */
+    }
+    .company-card-banner {
+        width: 100%;
+        height: auto;
+        min-height: 120px; /* Altura mínima para el banner */
+        max-height: 150px; /* Altura máxima para el banner */
+        object-fit: cover;
+        border-radius: 0.5rem 0.5rem 0 0; /* Bordes redondeados solo arriba */
+    }
+    .company-profile-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        /* Calcular la posición: (Altura del banner / 2) - (Altura del icono / 2) + offset para que quede justo */
+        top: calc(150px / 2 - 80px / 2); /* Altura máxima del banner (150px) */
+        transform: translateY(-50%); /* Ajuste para centrar verticalmente */
+        margin-left: auto;
+        margin-right: auto;
+        border: 3px solid var(--white-smoke); /* Borde blanco alrededor del círculo */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        font-size: 2rem;
+        font-weight: bold;
+        overflow: hidden; /* Ocultar partes de la imagen si se desborda */
+    }
+    .company-profile-icon .iconify {
+        font-size: 50px;
+    }
+    .company-profile-icon img {
+        max-width: 70%;
+        max-height: 70%;
+    }
+  </style>
+  <title>Gestor de Empresas</title>
+</head>
+<body class="bg-seashell min-h-screen flex flex-col items-center p-8">
+
+  <h1 class="text-3xl font-extrabold text-ebony mb-8">Gestor de Empresas</h1>
+
+  <div class="flex flex-wrap justify-center gap-4 mb-6">
+    <button id="uploadJsonBtn" class="bg-light-blue text-ebony px-6 py-3 rounded-md shadow-lg hover:bg-cadet-blue hover:text-white-smoke transition-colors duration-300 flex items-center justify-center font-semibold">
+        <span class="iconify text-2xl mr-2" data-icon="mdi:upload"></span> Subir JSON
+    </button>
+    <input type="file" id="json-file-input" accept=".json" class="hidden">
+    <button id="openModalBtn" class="bg-teal text-white-smoke px-6 py-3 rounded-md shadow-lg hover:bg-cadet-blue transition-colors duration-300 flex items-center justify-center font-semibold">
+      <span class="iconify text-2xl mr-2" data-icon="ic:baseline-plus"></span> Agregar Nueva Empresa
+    </button>
+    <button id="downloadJsonBtn" class="bg-light-blue text-ebony px-6 py-3 rounded-md shadow-lg hover:bg-cadet-blue hover:text-white-smoke transition-colors duration-300 flex items-center justify-center font-semibold">
+      <span class="iconify text-2xl mr-2" data-icon="mdi:download"></span> Descargar JSON
+    </button>
+  </div>
+
+  <div class="w-full max-w-xl mb-8">
+    <input type="text" id="search-input" class="w-full p-3 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony shadow-sm" placeholder="Buscar empresa por nombre o ID...">
+  </div>
+
+  <div id="companies-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full max-w-7xl">
+    <div class="bg-white-smoke p-6 rounded-lg shadow-md border border-seashell flex flex-col items-center justify-center text-center text-cadet-blue font-semibold h-48 col-span-full">
+      <span class="iconify text-5xl mb-3" data-icon="mdi:information-outline"></span>
+      <p>Aún no hay empresas guardadas.</p>
+      <p class="text-sm text-ebony mt-2">Haz clic en "Agregar Nueva Empresa" para empezar.</p>
+    </div>
+  </div>
+
+
+  <div id="myModal" class="fixed inset-0 modal-overlay flex items-center justify-center p-4 z-50 hidden">
+    <div class="bg-white-smoke rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col relative">
+      <div class="flex justify-between items-center p-4 border-b border-seashell sticky top-0 bg-white-smoke z-10">
+        <h2 class="text-xl font-semibold text-ebony">Agregar/Editar Información de Empresa</h2>
+        <button id="closeModalBtn" class="text-ebony hover:text-cadet-blue">
+          <span class="iconify text-3xl" data-icon="mdi:close"></span>
+        </button>
+      </div>
+
+      <div class="flex border-b border-seashell sticky top-[5.25rem] bg-white-smoke z-10">
+        <button class="tab-button flex-1 p-3 text-center text-ebony font-medium hover:bg-seashell transition-colors duration-200 active-tab" data-tab="identidad">Identidad</button>
+        <button class="tab-button flex-1 p-3 text-center text-ebony font-medium hover:bg-seashell transition-colors duration-200" data-tab="general">General</button>
+        <button class="tab-button flex-1 p-3 text-center text-ebony font-medium hover:bg-seashell transition-colors duration-200" data-tab="servicios">Servicios</button>
+        <button class="tab-button flex-1 p-3 text-center text-ebony font-medium hover:bg-seashell transition-colors duration-200" data-tab="contacto">Contacto</button>
+        <button class="tab-button flex-1 p-3 text-center text-ebony font-medium hover:bg-seashell transition-colors duration-200" data-tab="md">MD</button>
+      </div>
+
+      <div class="modal-content-wrapper p-6">
+        <div id="tab-identidad" class="tab-content">
+          <h3 class="text-lg font-bold text-teal mb-4">Identidad</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="identidad-nombre" class="block text-ebony font-medium mb-1">Nombre</label>
+              <input type="text" id="identidad-nombre" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Nombre de la entidad">
+            </div>
+            <div>
+              <label for="identidad-id" class="block text-ebony font-medium mb-1">ID</label>
+              <input type="text" id="identidad-id" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="ID único (editable)">
+            </div>
+            <div>
+              <label for="identidad-slogan" class="block text-ebony font-medium mb-1">Slogan</label>
+              <input type="text" id="identidad-slogan" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Slogan de la entidad">
+            </div>
+            <div>
+              <label for="identidad-categoria" class="block text-ebony font-medium mb-1">Categoría</label>
+              <input type="text" id="identidad-categoria" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Categoría principal">
+            </div>
+            <div>
+              <label for="identidad-tipo" class="block text-ebony font-medium mb-1">Tipo</label>
+              <input type="text" id="identidad-tipo" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Tipo de entidad">
+            </div>
+            <div>
+              <label for="identidad-genero" class="block text-ebony font-medium mb-1">Género</label>
+              <select id="identidad-genero" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony">
+                <option value="">Selecciona</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-4">
+            <label class="block text-ebony font-medium mb-1">Paleta de Colores (2)</label>
+            <div class="flex flex-wrap gap-2">
+              <div class="flex items-center">
+                <input type="color" id="color-picker-1" class="w-8 h-8 rounded-full border border-seashell cursor-pointer" value="#006A71">
+                <input type="text" id="color-hex-1" class="ml-2 p-1 border border-seashell rounded-md w-24 bg-white-smoke text-ebony" placeholder="#HEX" value="#006A71">
+              </div>
+              <div class="flex items-center">
+                <input type="color" id="color-picker-2" class="w-8 h-8 rounded-full border border-seashell cursor-pointer" value="#48A6A7">
+                <input type="text" id="color-hex-2" class="ml-2 p-1 border border-seashell rounded-md w-24 bg-white-smoke text-ebony" placeholder="#HEX" value="#48A6A7">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-general" class="tab-content hidden">
+          <h3 class="text-lg font-bold text-teal mb-4">General</h3>
+          <div class="mb-4">
+            <label for="general-acerca" class="block text-ebony font-medium mb-1">Acerca de</label>
+            <textarea id="general-acerca" rows="4" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Información general sobre la entidad"></textarea>
+          </div>
+          <div class="mb-4">
+            <label for="general-mision" class="block text-ebony font-medium mb-1">Misión</label>
+            <textarea id="general-mision" rows="3" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Misión de la entidad"></textarea>
+          </div>
+          <div>
+            <label for="general-vision" class="block text-ebony font-medium mb-1">Visión</label>
+            <textarea id="general-vision" rows="3" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Visión de la entidad"></textarea>
+          </div>
+        </div>
+
+        <div id="tab-servicios" class="tab-content hidden">
+          <h3 class="text-lg font-bold text-teal mb-4">Servicios</h3>
+          <div id="servicios-container">
+            <div class="service-item bg-seashell p-4 rounded-md mb-4 border border-seashell">
+                <h4 class="text-md font-semibold text-ebony mb-2">Servicio 1</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="servicio-icon-1" class="block text-ebony font-medium mb-1">Icono</label>
+                        <input type="text" id="servicio-icon-1" class="icon-input w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Haz clic para seleccionar" readonly>
+                        <div class="icon-selection-menu mt-2 hidden icon-grid"></div>
+                    </div>
+                    <div>
+                        <label for="servicio-nombre-1" class="block text-ebony font-medium mb-1">Nombre</label>
+                        <input type="text" id="servicio-nombre-1" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Nombre del servicio">
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <label for="servicio-descripcion-1" class="block text-ebony font-medium mb-1">Descripción</label>
+                    <textarea id="servicio-descripcion-1" rows="3" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Descripción del servicio"></textarea>
+                </div>
+                <button class="remove-service-btn mt-4 bg-cadet-blue text-white-smoke px-3 py-1 rounded-md hover:bg-teal transition-colors duration-200">
+                    <span class="iconify mr-1" data-icon="mdi:minus-circle"></span> Eliminar Servicio
+                </button>
+            </div>
+          </div>
+          <button id="addServiceBtn" class="mt-4 bg-teal text-white-smoke px-4 py-2 rounded-md hover:bg-cadet-blue transition-colors duration-200 flex items-center justify-center">
+            <span class="iconify mr-2" data-icon="ic:baseline-plus"></span> Agregar Servicio
+          </button>
+        </div>
+
+        <div id="tab-contacto" class="tab-content hidden">
+          <h3 class="text-lg font-bold text-teal mb-4">Contacto</h3>
+          <div class="mb-4">
+            <label class="block text-ebony font-medium mb-2">Redes Sociales</label>
+            <div id="social-links-container">
+              <div class="flex items-center gap-2 mb-2">
+                <input type="text" class="social-link-input w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Link de red social (ej. Instagram)">
+                <button class="remove-social-btn bg-cadet-blue text-white-smoke px-3 py-1 rounded-md hover:bg-teal transition-colors duration-200">
+                    <span class="iconify" data-icon="mdi:minus"></span>
+                </button>
+              </div>
+            </div>
+            <button id="addSocialLinkBtn" class="mt-2 bg-teal text-white-smoke px-3 py-1 rounded-md hover:bg-cadet-blue transition-colors duration-200 flex items-center justify-center">
+              <span class="iconify mr-1" data-icon="ic:baseline-plus"></span> Añadir Red Social
+            </button>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-ebony font-medium mb-2">Ubicación</label>
+            <div id="location-links-container">
+                <div class="flex items-center gap-2 mb-2">
+                    <input type="text" class="location-label-input w-1/3 p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Nombre (ej. Oficina Principal)">
+                    <input type="text" class="location-link-input w-2/3 p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Link de Google Maps">
+                    <button class="remove-location-btn bg-cadet-blue text-white-smoke px-3 py-1 rounded-md hover:bg-teal transition-colors duration-200">
+                        <span class="iconify" data-icon="mdi:minus"></span>
+                    </button>
+                </div>
+            </div>
+            <button id="addLocationBtn" class="mt-2 bg-teal text-white-smoke px-3 py-1 rounded-md hover:bg-cadet-blue transition-colors duration-200 flex items-center justify-center">
+                <span class="iconify mr-1" data-icon="ic:baseline-plus"></span> Añadir Ubicación
+            </button>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-ebony font-medium mb-2">Emails</label>
+            <div id="email-container">
+              <div class="flex items-center gap-2 mb-2 email-item">
+                <input type="email" class="email-input w-2/3 p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Correo electrónico">
+                <div class="flex items-center">
+                  <input type="checkbox" class="email-primary-checkbox mr-1" checked disabled>
+                  <span class="text-ebony text-sm">Primario</span>
+                </div>
+                <button class="remove-email-btn bg-cadet-blue text-white-smoke px-3 py-1 rounded-md hover:bg-teal transition-colors duration-200">
+                    <span class="iconify" data-icon="mdi:minus"></span>
+                </button>
+              </div>
+            </div>
+            <button id="addEmailBtn" class="mt-2 bg-teal text-white-smoke px-3 py-1 rounded-md hover:bg-cadet-blue transition-colors duration-200 flex items-center justify-center">
+              <span class="iconify mr-1" data-icon="ic:baseline-plus"></span> Añadir Email
+            </button>
+          </div>
+
+          <div>
+            <label class="block text-ebony font-medium mb-2">Teléfonos</label>
+            <div id="phone-container">
+              <div class="flex items-center gap-2 mb-2 phone-item">
+                <input type="tel" class="phone-input w-2/3 p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Número de teléfono">
+                <div class="flex items-center">
+                  <input type="checkbox" class="phone-primary-checkbox mr-1" checked disabled>
+                  <span class="text-ebony text-sm">Primario</span>
+                </div>
+                <button class="remove-phone-btn bg-cadet-blue text-white-smoke px-3 py-1 rounded-md hover:bg-teal transition-colors duration-200">
+                    <span class="iconify" data-icon="mdi:minus"></span>
+                </button>
+              </div>
+            </div>
+            <button id="addPhoneBtn" class="mt-2 bg-teal text-white-smoke px-3 py-1 rounded-md hover:bg-cadet-blue transition-colors duration-200 flex items-center justify-center">
+              <span class="iconify mr-1" data-icon="ic:baseline-plus"></span> Añadir Teléfono
+            </button>
+          </div>
+        </div>
+
+        <div id="tab-md" class="tab-content hidden">
+            <h3 class="text-lg font-bold text-teal mb-4">Mercado Digital</h3>
+            <div class="mb-4">
+                <label for="md-mink" class="block text-ebony font-medium mb-1">Mink</label>
+                <input type="text" id="md-mink" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Nombre en minúsculas" oninput="this.value = this.value.toLowerCase()">
+            </div>
+            <div class="mb-4">
+                <label for="md-status" class="block text-ebony font-medium mb-1">Status</label>
+                <select id="md-status" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony">
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-ebony font-medium mb-1">Comprados</label>
+                <div class="flex items-center">
+                    <input type="checkbox" id="md-comprados-mink" class="mr-2">
+                    <label for="md-comprados-mink" class="text-ebony">Mink</label>
+                </div>
+            </div>
+            <div>
+                <label for="md-alianza" class="block text-ebony font-medium mb-1">Alianza</label>
+                <input type="date" id="md-alianza" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony">
+            </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end p-4 border-t border-seashell sticky bottom-0 bg-white-smoke z-10">
+        <button id="saveCompanyBtn" class="bg-teal text-white-smoke px-6 py-2 rounded-md hover:bg-cadet-blue transition-colors duration-200 font-semibold">Guardar Empresa</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- Datos y Variables Globales ---
+    let companies = []; // Array para almacenar los datos de las empresas
+    let currentEditingCompanyId = null; // Para saber si estamos editando o creando
+    let deleteClickTimer = null; // Para el doble clic de eliminar
+
+    const predefinedIcons = [
+        // Iconos de construcción y servicios generales (ajustados para mejor visualización en Iconify)
+        "mdi:access-point-network-off", // Herramientas
+        "mdi:hard-hat", // Casco / seguridad
+        "mdi:truck", // Camión
+        "mdi:crane", // Grúa
+        "mdi:factory", // Fábrica / industria
+        "mdi:home-lightning-bolt", // Instalación eléctrica
+        "mdi:ceiling-fan", // Ventilación/aire
+        "mdi:pipe-leak", // Fugas / Fontanería
+        "mdi:pipe-wrench", // Llave de fontanería
+        "mdi:sprinkler", // Riego / Jardinería
+        "mdi:floor-plan", // Planos / Diseño
+        "mdi:tools", // Herramientas varias
+        "mdi:lightbulb-on-outline", // Iluminación
+
+        // Iconos de seguridad / vigilancia
+        "mdi:cctv", // Cámara de vigilancia
+        "mdi:shield-check", // Seguridad / escudo
+        "mdi:lock", // Candado
+        "mdi:fence", // Cerco
+        "mdi:gate", // Portón
+
+        // Iconos de diseño de interiores
+        "mdi:sofa", // Muebles
+        "mdi:floor-lamp", // Lámpara de pie
+        "mdi:wallpaper", // Papel tapiz / Decoración
+        "mdi:paint-roller", // Pintura
+        "mdi:ruler", // Medición / Diseño
+        "mdi:chair-rolling", // Oficina / Muebles de oficina
+
+        // Iconos de instalación y redes
+        "mdi:router-wireless", // Redes / Conectividad
+        "mdi:server", // Servidores / IT
+        "mdi:cables-stacked", // Cableado
+        "mdi:screw-machine-flat-top", // Tornillo / Montaje
+        "mdi:drill", // Taladro
+
+        // Iconos de uso general para servicios y contacto
+        "mdi:phone", // Teléfono
+        "mdi:email", // Email
+        "mdi:map-marker", // Ubicación
+        "mdi:web", // Página web
+        "mdi:account-group", // Equipo / Personal
+        "mdi:handshake", // Negocios / Acuerdo
+        "mdi:medal", // Calidad / Excelencia
+        "mdi:clipboard-text-outline", // Documentación / Contratos
+        "mdi:calendar-check-outline", // Citas / Agendas
+        "mdi:star", // General
+        "mdi:settings", // Configuración / Servicio técnico
+        "mdi:help-box", // Soporte / Ayuda
+
+        // Redes Sociales (ejemplos)
+        "mdi:facebook",
+        "mdi:instagram",
+        "mdi:tiktok",
+        "mdi:linkedin",
+        "mdi:youtube",
+        "mdi:whatsapp"
+    ];
+
+    // --- Selectores DOM ---
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const myModal = document.getElementById('myModal');
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const identidadNombreInput = document.getElementById('identidad-nombre');
+    const identidadIdInput = document.getElementById('identidad-id');
+    const saveCompanyBtn = document.getElementById('saveCompanyBtn');
+    const companiesContainer = document.getElementById('companies-container');
+    const downloadJsonBtn = document.getElementById('downloadJsonBtn');
+    const uploadJsonBtn = document.getElementById('uploadJsonBtn');
+    const jsonFileInput = document.getElementById('json-file-input');
+    const searchInput = document.getElementById('search-input');
+
+
+    // Servicio
+    const serviciosContainer = document.getElementById('servicios-container');
+    const addServiceBtn = document.getElementById('addServiceBtn');
+    let serviceCount = 0; // Se inicializa a 0 y se incrementa antes de añadir el primer servicio
+
+    // Contacto
+    const socialLinksContainer = document.getElementById('social-links-container');
+    const addSocialLinkBtn = document.getElementById('addSocialLinkBtn');
+    const locationLinksContainer = document.getElementById('location-links-container');
+    const addLocationBtn = document.getElementById('addLocationBtn');
+    const emailContainer = document.getElementById('email-container');
+    const addEmailBtn = document.getElementById('addEmailBtn');
+    const phoneContainer = document.getElementById('phone-container');
+    const addPhoneBtn = document.getElementById('addPhoneBtn');
+
+    // Colores
+    const colorPicker1 = document.getElementById('color-picker-1');
+    const colorHex1 = document.getElementById('color-hex-1');
+    const colorPicker2 = document.getElementById('color-picker-2');
+    const colorHex2 = document.getElementById('color-hex-2');
+
+    // MD
+    const mdMinkInput = document.getElementById('md-mink');
+    const mdStatusSelect = document.getElementById('md-status');
+    const mdCompradosMinkCheckbox = document.getElementById('md-comprados-mink');
+    const mdAlianzaInput = document.getElementById('md-alianza');
+
+
+    // --- Funciones del Modal ---
+
+    function openModal() {
+      myModal.classList.remove('hidden');
+      // Activar la primera pestaña por defecto
+      tabButtons[0].click();
+    }
+
+    function closeModal() {
+      myModal.classList.add('hidden');
+      currentEditingCompanyId = null; // Resetear el ID de edición al cerrar
+      resetForm(); // Resetear el formulario al cerrar el modal
+    }
+
+    // Cierre del modal al hacer clic fuera
+    myModal.addEventListener('click', (event) => {
+      if (event.target === myModal) {
+        closeModal();
+      }
+    });
+
+    openModalBtn.addEventListener('click', () => {
+        currentEditingCompanyId = null; // Indicar que estamos creando una nueva empresa
+        resetForm(); // Resetear el formulario para una nueva entrada
+        openModal();
+    });
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Lógica para cambiar de pestaña
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active-tab'));
+        tabContents.forEach(content => content.classList.add('hidden'));
+
+        button.classList.add('active-tab');
+        const targetTab = button.dataset.tab;
+        document.getElementById(`tab-${targetTab}`).classList.remove('hidden');
+      });
+    });
+
+    // --- Generación de ID (Editable) ---
+    identidadNombreInput.addEventListener('input', (event) => {
+      // Solo generar ID automáticamente si no estamos editando una empresa existente
+      // o si el campo ID está vacío (significa que el usuario no lo ha tocado)
+      if (!currentEditingCompanyId || identidadIdInput.value === '') {
+        const name = event.target.value;
+        const id = name.toLowerCase().replace(/\s+/g, '-'); // Reemplaza espacios con guiones y a minúsculas
+        identidadIdInput.value = id;
+      }
+    });
+
+    // --- Lógica para Iconos Predefinidos ---
+    function populateIconMenu(menuElement, inputElement) {
+        menuElement.innerHTML = predefinedIcons.map(icon => `
+            <span class="text-ebony text-3xl hover:text-teal ${inputElement.value === icon ? 'selected' : ''}" data-icon="${icon}"></span>
+        `).join('');
+
+        menuElement.querySelectorAll('span').forEach(iconSpan => {
+            iconSpan.addEventListener('click', () => {
+                inputElement.value = iconSpan.dataset.icon;
+                // Remover 'selected' de todos los hermanos y añadirlo al clicado
+                menuElement.querySelectorAll('span').forEach(s => s.classList.remove('selected'));
+                iconSpan.classList.add('selected');
+                menuElement.classList.add('hidden'); // Ocultar después de seleccionar
+            });
+        });
+    }
+
+    // Abre/cierra el menú de iconos
+    document.addEventListener('click', (event) => {
+        document.querySelectorAll('.icon-input').forEach(input => {
+            const menu = input.nextElementSibling; // El menú es el siguiente hermano del input
+            if (event.target === input) {
+                // Si se hace clic en el input, muestra/oculta el menú y lo pobla
+                menu.classList.toggle('hidden');
+                if (!menu.classList.contains('hidden')) {
+                    populateIconMenu(menu, input);
+                }
+            } else if (menu && !menu.contains(event.target) && event.target !== input) {
+                // Si se hace clic fuera del input y del menú, oculta el menú
+                menu.classList.add('hidden');
+            }
+        });
+    });
+
+
+    // --- Lógica para añadir/eliminar secciones dinámicas ---
+
+    // Servicios
+    function addService(serviceData = {}) {
+      serviceCount++;
+      const newServiceHtml = `
+        <div class="service-item bg-seashell p-4 rounded-md mb-4 border border-seashell">
+            <h4 class="text-md font-semibold text-ebony mb-2">Servicio ${serviceCount}</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="servicio-icon-${serviceCount}" class="block text-ebony font-medium mb-1">Icono</label>
+                    <input type="text" id="servicio-icon-${serviceCount}" class="icon-input w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Haz clic para seleccionar" value="${serviceData.icon || ''}" readonly>
+                    <div class="icon-selection-menu mt-2 hidden icon-grid"></div>
+                </div>
+                <div>
+                    <label for="servicio-nombre-${serviceCount}" class="block text-ebony font-medium mb-1">Nombre</label>
+                    <input type="text" id="servicio-nombre-${serviceCount}" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Nombre del servicio" value="${serviceData.title || ''}">
+                </div>
+            </div>
+            <div class="mt-4">
+                <label for="servicio-descripcion-${serviceCount}" class="block text-ebony font-medium mb-1">Descripción</label>
+                <textarea id="servicio-descripcion-${serviceCount}" rows="3" class="w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Descripción del servicio">${serviceData.text || ''}</textarea>
+            </div>
+            <button class="remove-service-btn mt-4 bg-cadet-blue text-white-smoke px-3 py-1 rounded-md hover:bg-teal transition-colors duration-200">
+                <span class="iconify mr-1" data-icon="mdi:minus-circle"></span> Eliminar Servicio
+            </button>
+        </div>
+      `;
+      serviciosContainer.insertAdjacentHTML('beforeend', newServiceHtml);
+      attachRemoveServiceEvents();
+      // Asegurarse de que los nuevos inputs de icono tengan el menú configurado
+      const newIconInput = document.getElementById(`servicio-icon-${serviceCount}`);
+      const newIconMenu = newIconInput.nextElementSibling;
+      if (newIconMenu) {
+          newIconMenu.classList.add('icon-grid');
+      }
+    }
+
+    function attachRemoveServiceEvents() {
+        document.querySelectorAll('.remove-service-btn').forEach(button => {
+            button.onclick = (event) => {
+                event.target.closest('.service-item').remove();
+            };
+        });
+    }
+
+    addServiceBtn.addEventListener('click', () => addService()); // Llamada sin argumentos para añadir uno nuevo
+    attachRemoveServiceEvents(); // Adjuntar eventos para el servicio inicial
+
+    // Redes Sociales
+    function addSocialLink(linkData = '') {
+        const newSocialLinkHtml = `
+            <div class="flex items-center gap-2 mb-2">
+                <input type="text" class="social-link-input w-full p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Link de red social (ej. Instagram)" value="${linkData}">
+                <button class="remove-social-btn bg-cadet-blue text-white-smoke px-3 py-1 rounded-md hover:bg-teal transition-colors duration-200">
+                    <span class="iconify" data-icon="mdi:minus"></span>
+                </button>
+            </div>
+        `;
+        socialLinksContainer.insertAdjacentHTML('beforeend', newSocialLinkHtml);
+        attachRemoveSocialLinkEvents();
+    }
+
+    function attachRemoveSocialLinkEvents() {
+        document.querySelectorAll('.remove-social-btn').forEach(button => {
+            button.onclick = (event) => {
+                event.target.closest('.flex.items-center.gap-2').remove();
+            };
+        });
+    }
+
+    addSocialLinkBtn.addEventListener('click', () => addSocialLink());
+    attachRemoveSocialLinkEvents();
+
+    // Ubicación
+    function addLocationLink(locationData = {}) {
+        const newLocationLinkHtml = `
+            <div class="flex items-center gap-2 mb-2">
+                <input type="text" class="location-label-input w-1/3 p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Nombre (ej. Oficina Principal)" value="${locationData.label || ''}">
+                <input type="text" class="location-link-input w-2/3 p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Link de Google Maps" value="${locationData.link || ''}">
+                <button class="remove-location-btn bg-cadet-blue text-white-smoke px-3 py-1 rounded-md hover:bg-teal transition-colors duration-200">
+                    <span class="iconify" data-icon="mdi:minus"></span>
+                </button>
+            </div>
+        `;
+        locationLinksContainer.insertAdjacentHTML('beforeend', newLocationLinkHtml);
+        attachRemoveLocationLinkEvents();
+    }
+
+    function attachRemoveLocationLinkEvents() {
+        document.querySelectorAll('.remove-location-btn').forEach(button => {
+            button.onclick = (event) => {
+                event.target.closest('.flex.items-center.gap-2').remove();
+            };
+        });
+    }
+
+    addLocationBtn.addEventListener('click', () => addLocationLink());
+    attachRemoveLocationLinkEvents();
+
+    // Emails
+    function updateEmailPrimaryStatus() {
+        const emailItems = emailContainer.querySelectorAll('.email-item');
+        emailItems.forEach((item, index) => {
+            const checkbox = item.querySelector('.email-primary-checkbox');
+            if (index === 0) {
+                checkbox.checked = true;
+                checkbox.disabled = true;
+            } else {
+                checkbox.checked = false;
+                checkbox.disabled = false;
+            }
+        });
+    }
+
+    function addEmail(emailData = {}) {
+        const checked = emailData.primario ? 'checked' : '';
+        const disabled = (emailData.primario && emailContainer.children.length === 0) ? 'disabled' : ''; // Solo deshabilitar el primero si es el primero en la lista
+        const newEmailHtml = `
+            <div class="flex items-center gap-2 mb-2 email-item">
+                <input type="email" class="email-input w-2/3 p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Correo electrónico" value="${emailData.email || ''}">
+                <div class="flex items-center">
+                    <input type="checkbox" class="email-primary-checkbox mr-1" ${checked} ${disabled}>
+                    <span class="text-ebony text-sm">Primario</span>
+                </div>
+                <button class="remove-email-btn bg-cadet-blue text-white-smoke px-3 py-1 rounded-md hover:bg-teal transition-colors duration-200">
+                    <span class="iconify" data-icon="mdi:minus"></span>
+                </button>
+            </div>
+        `;
+        emailContainer.insertAdjacentHTML('beforeend', newEmailHtml);
+        attachRemoveEmailEvents();
+        updateEmailPrimaryStatus();
+    }
+
+    function attachRemoveEmailEvents() {
+        document.querySelectorAll('.remove-email-btn').forEach(button => {
+            button.onclick = (event) => {
+                event.target.closest('.email-item').remove();
+                updateEmailPrimaryStatus();
+            };
+        });
+
+        document.querySelectorAll('.email-primary-checkbox').forEach(checkbox => {
+            checkbox.onchange = (event) => {
+                if (event.target.checked) {
+                    document.querySelectorAll('.email-primary-checkbox').forEach(otherCheckbox => {
+                        if (otherCheckbox !== event.target && !otherCheckbox.disabled) {
+                            otherCheckbox.checked = false;
+                        }
+                    });
+                } else {
+                    // Si desmarca el checkbox, asegurarse de que al menos uno esté marcado si hay otros disponibles
+                    const anyOtherChecked = Array.from(document.querySelectorAll('.email-primary-checkbox')).some(cb => cb.checked && !cb.disabled);
+                    if (!anyOtherChecked && document.querySelectorAll('.email-item').length > 1) {
+                         // Si desmarcó el único primario y hay más de un email, hacer el primero no deshabilitado primario
+                        const firstNonDisabled = Array.from(document.querySelectorAll('.email-primary-checkbox')).find(cb => !cb.disabled);
+                        if (firstNonDisabled) {
+                            firstNonDisabled.checked = true;
+                        }
+                    }
+                }
+                updateEmailPrimaryStatus(); // Re-evaluar los disabled
+            };
+        });
+    }
+
+    addEmailBtn.addEventListener('click', () => addEmail());
+    attachRemoveEmailEvents();
+    updateEmailPrimaryStatus();
+
+    // Teléfonos
+    function updatePhonePrimaryStatus() {
+        const phoneItems = phoneContainer.querySelectorAll('.phone-item');
+        phoneItems.forEach((item, index) => {
+            const checkbox = item.querySelector('.phone-primary-checkbox');
+            if (index === 0) {
+                checkbox.checked = true;
+                checkbox.disabled = true;
+            } else {
+                checkbox.checked = false;
+                checkbox.disabled = true; // Los demás no pueden ser primarios
+            }
+        });
+    }
+
+    function addPhone(phoneData = {}) {
+        const checked = phoneData.primario ? 'checked' : '';
+        const disabled = (phoneData.primario && phoneContainer.children.length === 0) ? 'disabled' : ''; // Solo deshabilitar el primero si es el primero en la lista
+        const newPhoneHtml = `
+            <div class="flex items-center gap-2 mb-2 phone-item">
+                <input type="tel" class="phone-input w-2/3 p-2 border border-seashell rounded-md focus:outline-none focus:border-teal bg-white-smoke text-ebony" placeholder="Número de teléfono" value="${phoneData.telefono || ''}">
+                <div class="flex items-center">
+                    <input type="checkbox" class="phone-primary-checkbox mr-1" ${checked} ${disabled}>
+                    <span class="text-ebony text-sm">Primario</span>
+                </div>
+                <button class="remove-phone-btn bg-cadet-blue text-white-smoke px-3 py-1 rounded-md hover:bg-teal transition-colors duration-200">
+                    <span class="iconify" data-icon="mdi:minus"></span>
+                </button>
+            </div>
+        `;
+        phoneContainer.insertAdjacentHTML('beforeend', newPhoneHtml);
+        attachRemovePhoneEvents();
+        updatePhonePrimaryStatus();
+    }
+
+    function attachRemovePhoneEvents() {
+        document.querySelectorAll('.remove-phone-btn').forEach(button => {
+            button.onclick = (event) => {
+                event.target.closest('.phone-item').remove();
+                updatePhonePrimaryStatus();
+            };
+        });
+    }
+
+    addPhoneBtn.addEventListener('click', () => addPhone());
+    attachRemovePhoneEvents();
+    updatePhonePrimaryStatus();
+
+    // Sincronización Color Pickers
+    colorPicker1.addEventListener('input', (event) => {
+        colorHex1.value = event.target.value.toUpperCase();
+    });
+    colorHex1.addEventListener('input', (event) => {
+        colorPicker1.value = event.target.value;
+    });
+
+    colorPicker2.addEventListener('input', (event) => {
+        colorHex2.value = event.target.value.toUpperCase();
+    });
+    colorHex2.addEventListener('input', (event) => {
+        colorPicker2.value = event.target.value;
+    });
+
+    // --- Lógica de Guardado y Carga (LocalStorage) ---
+
+    function saveCompaniesToLocalStorage() {
+      localStorage.setItem('companiesData', JSON.stringify(companies));
+      renderCompanies(); // Volver a renderizar las tarjetas después de guardar
+    }
+
+    function loadCompaniesFromLocalStorage() {
+      const storedData = localStorage.getItem('companiesData');
+      if (storedData) {
+        companies = JSON.parse(storedData);
+      }
+      renderCompanies();
+    }
+
+    function getCompanyDataFromForm() {
+      const company = {
+        identidad: {
+          id: identidadIdInput.value,
+          nombre: identidadNombreInput.value,
+          slogan: document.getElementById('identidad-slogan').value,
+          categoria: document.getElementById('identidad-categoria').value,
+          tipo: document.getElementById('identidad-tipo').value,
+          genero: document.getElementById('identidad-genero').value,
+          paletaColores: [colorHex1.value, colorHex2.value]
+        },
+        general: {
+          acerca: document.getElementById('general-acerca').value,
+          mision: document.getElementById('general-mision').value,
+          vision: document.getElementById('general-vision').value
+        },
+        servicios: [],
+        contacto: {
+          redesSociales: [],
+          ubicacion: [],
+          emails: [],
+          telefonos: []
+        },
+        md: {
+            mink: mdMinkInput.value,
+            status: mdStatusSelect.value,
+            comprados: {
+                mink: mdCompradosMinkCheckbox.checked
+            },
+            alianza: mdAlianzaInput.value
+        }
+      };
+
+      // Recopilar servicios
+      serviciosContainer.querySelectorAll('.service-item').forEach((item) => {
+        company.servicios.push({
+          icon: item.querySelector('.icon-input').value,
+          title: item.querySelector(`[id^="servicio-nombre-"]`).value, // Changed 'nombre' to 'title'
+          text: item.querySelector(`[id^="servicio-descripcion-"]`).value, // Changed 'descripcion' to 'text'
+        });
+      });
+
+      // Recopilar redes sociales
+      socialLinksContainer.querySelectorAll('.social-link-input').forEach(input => {
+        if (input.value) {
+          company.contacto.redesSociales.push(input.value);
+        }
+      });
+
+      // Recopilar ubicaciones
+      locationLinksContainer.querySelectorAll('.flex.items-center.gap-2').forEach(item => {
+        const label = item.querySelector('.location-label-input').value;
+        const link = item.querySelector('.location-link-input').value;
+        if (label || link) {
+            company.contacto.ubicacion.push({ label: label, link: link });
+        }
+      });
+
+      // Recopilar emails
+      emailContainer.querySelectorAll('.email-item').forEach(item => {
+        const email = item.querySelector('.email-input').value;
+        const isPrimary = item.querySelector('.email-primary-checkbox').checked;
+        if (email) {
+          company.contacto.emails.push({ email: email, primario: isPrimary });
+        }
+      });
+
+      // Recopilar teléfonos
+      phoneContainer.querySelectorAll('.phone-item').forEach(item => {
+        const phone = item.querySelector('.phone-input').value;
+        const isPrimary = item.querySelector('.phone-primary-checkbox').checked;
+        if (phone) {
+          company.contacto.telefonos.push({ telefono: phone, primario: isPrimary });
+        }
+      });
+
+      return company;
+    }
+
+    saveCompanyBtn.addEventListener('click', () => {
+      const originalButtonText = saveCompanyBtn.innerHTML;
+      const originalButtonClasses = saveCompanyBtn.className;
+      const newCompany = getCompanyDataFromForm();
+      const companyId = newCompany.identidad.id;
+
+      if (!companyId) {
+        alert('El ID de la empresa no puede estar vacío.'); // Mantener alerta para campo obligatorio
+        return;
+      }
+
+      const existingCompanyIndex = companies.findIndex(comp => comp.identidad.id === companyId);
+
+      if (existingCompanyIndex !== -1) {
+        // Actualizar empresa existente
+        companies[existingCompanyIndex] = newCompany;
+      } else {
+        // Añadir nueva empresa
+        companies.push(newCompany);
+      }
+      saveCompaniesToLocalStorage();
+
+      // Feedback visual del botón
+      saveCompanyBtn.innerHTML = '<span class="iconify text-2xl" data-icon="mdi:check"></span>';
+      saveCompanyBtn.classList.add('bg-green-500', 'hover:bg-green-600', 'saving');
+      saveCompanyBtn.classList.remove('bg-teal', 'hover:bg-cadet-blue');
+      saveCompanyBtn.style.width = saveCompanyBtn.offsetWidth + 'px'; // Set fixed width
+
+
+      setTimeout(() => {
+        saveCompanyBtn.innerHTML = originalButtonText;
+        saveCompanyBtn.className = originalButtonClasses;
+        saveCompanyBtn.style.width = ''; // Remove fixed width
+        closeModal(); // Cerrar modal después del feedback
+      }, 1000); // El check dura 1 segundo
+    });
+
+    // --- Descargar JSON ---
+    downloadJsonBtn.addEventListener('click', () => {
+      const dataStr = JSON.stringify(companies, null, 2); // null, 2 para un formato legible
+      const blob = new Blob([dataStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'users.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+
+    // --- Subir JSON (Importar/Actualizar) ---
+    uploadJsonBtn.addEventListener('click', () => {
+        jsonFileInput.click(); // Simular clic en el input de tipo file
+    });
+
+    jsonFileInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                const uploadedCompanies = JSON.parse(e.target.result);
+                if (!Array.isArray(uploadedCompanies)) {
+                    alert('El archivo JSON no contiene un array de empresas válido.');
+                    return;
+                }
+
+                uploadedCompanies.forEach(uploadedCompany => {
+                    const existingIndex = companies.findIndex(comp => comp.identidad.id === uploadedCompany.identidad.id);
+                    if (existingIndex !== -1) {
+                        // Actualizar empresa existente
+                        companies[existingIndex] = uploadedCompany;
+                    } else {
+                        // Añadir nueva empresa
+                        companies.push(uploadedCompany);
+                    }
+                });
+                saveCompaniesToLocalStorage();
+                alert('Empresas cargadas y actualizadas desde el JSON exitosamente!');
+            } catch (error) {
+                alert('Error al leer el archivo JSON: ' + error.message);
+                console.error(error);
+            }
+        };
+        reader.readAsText(file);
+        event.target.value = ''; // Limpiar el input de archivo para poder subir el mismo archivo de nuevo
+    });
+
+
+    // --- Resetear Formulario (cuando se abre el modal para una nueva empresa) ---
+    function resetForm() {
+        // Resetear campos de texto
+        document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="date"], textarea').forEach(input => input.value = '');
+        document.getElementById('identidad-genero').value = '';
+        identidadIdInput.value = ''; // Asegurarse de que el ID también se resetea
+
+        // Resetear colores a valores por defecto
+        colorPicker1.value = "#006A71";
+        colorHex1.value = "#006A71";
+        colorPicker2.value = "#48A6A7";
+        colorHex2.value = "#48A6A7";
+
+        // Limpiar secciones dinámicas y añadir un elemento inicial si es necesario
+        serviciosContainer.innerHTML = '';
+        serviceCount = 0; // Resetear el contador para que el primer servicio sea '1'
+        addService(); // Añadir el primer servicio (vacío)
+
+        socialLinksContainer.innerHTML = '';
+        addSocialLink();
+
+        locationLinksContainer.innerHTML = '';
+        addLocationLink();
+
+        emailContainer.innerHTML = '';
+        addEmail();
+
+        phoneContainer.innerHTML = '';
+        addPhone();
+
+        // Resetear campos MD
+        mdMinkInput.value = '';
+        mdStatusSelect.value = 'activo'; // Valor por defecto
+        mdCompradosMinkCheckbox.checked = false;
+        mdAlianzaInput.value = '';
+    }
+
+    // --- Renderizar Tarjetas de Empresas ---
+    function renderCompanies(filteredCompanies = companies) {
+      if (filteredCompanies.length === 0) {
+        companiesContainer.innerHTML = `
+          <div class="bg-white-smoke p-6 rounded-lg shadow-md border border-seashell flex flex-col items-center justify-center text-center text-cadet-blue font-semibold h-48 col-span-full">
+            <span class="iconify text-5xl mb-3" data-icon="mdi:information-outline"></span>
+            <p>No se encontraron empresas.</p>
+            <p class="text-sm text-ebony mt-2">${companies.length === 0 ? 'Haz clic en "Agregar Nueva Empresa" para empezar.' : 'Intenta otra búsqueda.'}</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Ordenar las empresas alfabéticamente por nombre
+      filteredCompanies.sort((a, b) => {
+          const nameA = (a.identidad.nombre || '').toLowerCase();
+          const nameB = (b.identidad.nombre || '').toLowerCase();
+          return nameA.localeCompare(nameB);
+      });
+
+      companiesContainer.innerHTML = '';
+      filteredCompanies.forEach(company => {
+        const primaryColor = company.identidad.paletaColores[0] || '#006A71'; // Default Teal (oscuro)
+        const secondaryColor = company.identidad.paletaColores[1] || '#9ACBD0'; // Default Light Blue (claro)
+
+        // Función para obtener iniciales
+        const getInitials = (name) => {
+            if (!name) return '??';
+            const words = name.split(' ').filter(word => word.length > 0);
+            if (words.length === 0) return '??';
+            if (words.length === 1) return words[0].substring(0, 2).toUpperCase();
+            return (words[0].charAt(0) + words[1].charAt(0)).toUpperCase();
+        };
+
+        const companyInitials = getInitials(company.identidad.nombre);
+
+        // Determinar un color de texto contrastante
+        const getContrastTextColor = (hexcolor) => {
+            if (!hexcolor || hexcolor.length !== 7) return '#0D0D0D'; // Default ebony
+            const r = parseInt(hexcolor.substr(1, 2), 16);
+            const g = parseInt(hexcolor.substr(3, 2), 16);
+            const b = parseInt(hexcolor.substr(5, 2), 16);
+            const y = (r * 299 + g * 587 + b * 114) / 1000;
+            return (y >= 128) ? '#0D0D0D' : '#F2F2F2'; // ebony for light, white-smoke for dark
+        };
+        const titleTextColor = primaryColor; // Título siempre primario
+        const sloganTextColor = secondaryColor; // Color para el eslogan
+        const infoTextColor = primaryColor; // Color para el tipo y categoría
+
+        const typeAndCategory = company.identidad.tipo && company.identidad.categoria ? `${company.identidad.tipo} de ${company.identidad.categoria}` : 'N/A';
+
+        // Obtener el número de teléfono primario para WhatsApp
+        let primaryPhoneNumber = '';
+        if (company.contacto && company.contacto.telefonos && company.contacto.telefonos.length > 0) {
+            const primaryPhoneObj = company.contacto.telefonos.find(p => p.primario) || company.contacto.telefonos[0];
+            primaryPhoneNumber = primaryPhoneObj.telefono;
+        }
+
+        const cardHtml = `
+          <div class="company-card p-0 rounded-lg shadow-md flex flex-col justify-between cursor-pointer hover:shadow-lg transition-shadow duration-200 bg-white-smoke"
+               style="border: 1px solid ${primaryColor}; border-bottom: 4px solid ${primaryColor};"
+               data-id="${company.identidad.id}">
+            <div class="company-card-banner" style="background-color: ${primaryColor};">
+                ${company.identidad.id ? `<img src="${company.identidad.id}/banner.png" class="company-card-banner" onerror="this.style.display='none';">` : ''}
+            </div>
+            <div class="px-6 pb-6" style="margin-top: -40px;">
+                <div class="flex justify-center mb-4">
+                    <div class="company-profile-icon" style="background-color: ${secondaryColor}; color: ${getContrastTextColor(primaryColor)};">
+                        ${company.identidad.id ? `
+                            <img src="${company.identidad.id}/icon.svg" onerror="this.onerror=null; this.parentElement.innerHTML='${companyInitials}';">
+                        ` : `
+                            <span>${companyInitials}</span>
+                        `}
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-left" style="color: ${primaryColor};">${company.identidad.nombre || 'Sin Nombre'}</h3>
+                <p class="text-left text-sm mb-1 italic" style="color: ${sloganTextColor};">${company.identidad.slogan || 'Sin eslogan'}</p>
+                <p class="text-left text-sm mb-4 font-bold" style="color: ${infoTextColor};">${typeAndCategory}</p>
+
+            </div>
+            <div class="mt-4 px-6 pb-4 flex justify-around items-center">
+                ${primaryPhoneNumber ? `
+                    <a href="https://wa.me/${primaryPhoneNumber.replace(/\s/g, '')}" target="_blank"
+                       class="whatsapp-company-btn px-3 py-1 rounded-md text-sm transition-colors duration-200 flex items-center justify-center"
+                       style="background-color: #25D366; color: white;">
+                        <span class="iconify text-lg" data-icon="mdi:whatsapp"></span>
+                    </a>
+                ` : ''}
+                <button class="delete-company-btn px-3 py-1 rounded-md text-sm transition-colors duration-200 flex items-center justify-center"
+                        style="background-color: ${primaryColor}; color: ${getContrastTextColor(primaryColor)};">
+                    <span class="iconify text-lg" data-icon="mdi:delete"></span>
+                </button>
+            </div>
+          </div>
+        `;
+        companiesContainer.insertAdjacentHTML('beforeend', cardHtml);
+      });
+      attachCardEvents(); // Adjuntar eventos a las nuevas tarjetas
+    }
+
+    // --- Adjuntar eventos a las tarjetas ---
+    function attachCardEvents() {
+        document.querySelectorAll('.company-card').forEach(card => {
+            // Evento para editar al seleccionar la tarjeta
+            card.addEventListener('click', (event) => {
+                // Prevenir que el clic en el botón de eliminar también active la edición
+                if (!event.target.closest('.delete-company-btn') && !event.target.closest('.whatsapp-company-btn')) {
+                    const companyId = card.dataset.id;
+                    editCompany(companyId);
+                }
+            });
+        });
+
+        document.querySelectorAll('.delete-company-btn').forEach(button => {
+            let originalButtonText = button.innerHTML;
+            let originalButtonClasses = button.className;
+            let originalButtonStyle = button.style.cssText; // Guardar estilos en línea
+
+            button.addEventListener('click', (event) => {
+                event.stopPropagation(); // Evita que el clic propague a la tarjeta
+
+                if (deleteClickTimer) {
+                    // Segundo clic: confirmar eliminación
+                    clearTimeout(deleteClickTimer);
+                    deleteClickTimer = null;
+                    const companyId = event.target.closest('.company-card').dataset.id;
+                    deleteCompany(companyId);
+
+                    // Restaurar botón después de eliminar
+                    button.innerHTML = originalButtonText;
+                    button.className = originalButtonClasses;
+                    button.style.cssText = originalButtonStyle;
+
+                } else {
+                    // Primer clic: pedir confirmación
+                    button.innerHTML = '<span class="iconify mr-1" data-icon="mdi:help"></span>¿Seguro?';
+                    button.classList.remove('text-white-smoke', 'hover:bg-red-700'); // Quitar clases de color genéricas si las tiene
+                    button.classList.add('bg-orange-500', 'hover:bg-orange-600'); // Añadir clases para el estado de "¿Seguro?"
+                    button.style.color = '#F2F2F2'; // Asegurar texto blanco para el "¿Seguro?"
+
+                    deleteClickTimer = setTimeout(() => {
+                        // Si no hay segundo clic, restaurar el botón
+                        button.innerHTML = originalButtonText;
+                        button.className = originalButtonClasses;
+                        button.style.cssText = originalButtonStyle; // Restaurar estilos en línea
+                        deleteClickTimer = null;
+                    }, 2000); // 2 segundos para el segundo clic
+                }
+            });
+        });
+    }
+
+    // --- Editar empresa ---
+    function editCompany(id) {
+        const companyToEdit = companies.find(comp => comp.identidad.id === id);
+        if (!companyToEdit) return;
+
+        currentEditingCompanyId = id; // Establecer el ID de la empresa que se está editando
+
+        // Rellenar formulario con datos de la empresa
+        document.getElementById('identidad-nombre').value = companyToEdit.identidad.nombre || '';
+        document.getElementById('identidad-id').value = companyToEdit.identidad.id || '';
+        document.getElementById('identidad-slogan').value = companyToEdit.identidad.slogan || '';
+        document.getElementById('identidad-categoria').value = companyToEdit.identidad.categoria || '';
+        document.getElementById('identidad-tipo').value = companyToEdit.identidad.tipo || '';
+        document.getElementById('identidad-genero').value = companyToEdit.identidad.genero || '';
+        colorPicker1.value = companyToEdit.identidad.paletaColores[0] || "#006A71";
+        colorHex1.value = companyToEdit.identidad.paletaColores[0] || "#006A71";
+        colorPicker2.value = companyToEdit.identidad.paletaColores[1] || "#48A6A7";
+        colorHex2.value = companyToEdit.identidad.paletaColores[1] || "#48A6A7";
+
+        document.getElementById('general-acerca').value = companyToEdit.general.acerca || '';
+        document.getElementById('general-mision').value = companyToEdit.general.mision || '';
+        document.getElementById('general-vision').value = companyToEdit.general.vision || '';
+
+        // Limpiar y rellenar servicios
+        serviciosContainer.innerHTML = '';
+        serviceCount = 0; // Resetear el contador
+        if (companyToEdit.servicios && companyToEdit.servicios.length > 0) {
+            companyToEdit.servicios.forEach(service => {
+                addService(service); // Usar la función addService con los datos del servicio
+            });
+        } else {
+            addService(); // Si no hay servicios, añade uno vacío
+        }
+
+        // Limpiar y rellenar redes sociales
+        socialLinksContainer.innerHTML = '';
+        if (companyToEdit.contacto.redesSociales && companyToEdit.contacto.redesSociales.length > 0) {
+            companyToEdit.contacto.redesSociales.forEach(link => {
+                addSocialLink(link);
+            });
+        } else {
+            addSocialLink();
+        }
+
+        // Limpiar y rellenar ubicaciones
+        locationLinksContainer.innerHTML = '';
+        if (companyToEdit.contacto.ubicacion && companyToEdit.contacto.ubicacion.length > 0) {
+            companyToEdit.contacto.ubicacion.forEach(loc => {
+                addLocationLink(loc);
+            });
+        } else {
+            addLocationLink();
+        }
+
+        // Limpiar y rellenar emails
+        emailContainer.innerHTML = '';
+        if (companyToEdit.contacto.emails && companyToEdit.contacto.emails.length > 0) {
+            companyToEdit.contacto.emails.forEach(email => {
+                addEmail(email);
+            });
+        } else {
+            addEmail();
+        }
+        updateEmailPrimaryStatus(); // Asegurarse de que el estado primario sea correcto
+
+        // Limpiar y rellenar teléfonos
+        phoneContainer.innerHTML = '';
+        if (companyToEdit.contacto.telefonos && companyToEdit.contacto.telefonos.length > 0) {
+            companyToEdit.contacto.telefonos.forEach(phone => {
+                addPhone(phone);
+            });
+        } else {
+            addPhone();
+        }
+        updatePhonePrimaryStatus(); // Asegurarse de que el estado primario sea correcto
+
+        document.getElementById('md-mink').value = companyToEdit.md.mink || '';
+        mdStatusSelect.value = companyToEdit.md.status || 'activo';
+        mdCompradosMinkCheckbox.checked = companyToEdit.md.comprados?.mink || false;
+        mdAlianzaInput.value = companyToEdit.md.alianza || '';
+
+
+        openModal(); // Abrir el modal con los datos cargados
+    }
+
+    // --- Eliminar empresa ---
+    function deleteCompany(id) {
+        companies = companies.filter(comp => comp.identidad.id !== id);
+        saveCompaniesToLocalStorage();
+    }
+
+    // --- Funcionalidad de Búsqueda ---
+    searchInput.addEventListener('input', (event) => {
+        const searchTerm = event.target.value.toLowerCase();
+        const filteredCompanies = companies.filter(company =>
+            company.identidad.nombre.toLowerCase().includes(searchTerm) ||
+            company.identidad.id.toLowerCase().includes(searchTerm)
+        );
+        renderCompanies(filteredCompanies);
+    });
+
+
+    // --- Inicialización ---
+    document.addEventListener('DOMContentLoaded', () => {
+        loadCompaniesFromLocalStorage();
+        // Asegurarse de que el primer servicio esté presente y los menús de íconos se inicialicen
+        if (serviciosContainer.children.length === 0) {
+            addService();
+        } else {
+             // Si ya hay un servicio en el HTML, aseguramos que el menú de iconos tenga el estilo correcto
+            document.querySelectorAll('.icon-input').forEach(input => {
+                const menu = input.nextElementSibling;
+                if (menu && !menu.classList.contains('icon-grid')) {
+                    menu.classList.add('icon-grid');
+                }
+            });
+        }
+    });
+
+  </script>
+</body>
+</html>

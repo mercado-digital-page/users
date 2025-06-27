@@ -1,0 +1,1248 @@
+[
+  {
+    "identidad": {
+      "id": "constructora-world",
+      "nombre": "Constructora World",
+      "slogan": "Construyendo tus sueños, cimiento a cimiento.",
+      "categoria": "Construcción",
+      "tipo": "Empresa",
+      "genero": "femenino",
+      "paletaColores": ["#2C3E50", "#3498DB"]
+    },
+    "general": {
+      "acerca": "Constructora World es tu aliado en la materialización de proyectos de construcción. Con experiencia y dedicación, transformamos tus ideas en realidades sólidas y duraderas. ¡Consíguela para tus proyectos!",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:draw",
+        "nombre": "Diseño Arquitectónico",
+        "descripcion": "Planificación y diseño de espacios funcionales y estéticos."
+      },
+      {
+        "icon": "mdi:crane",
+        "nombre": "Construcción General",
+        "descripcion": "Ejecución de proyectos de construcción de principio a fin."
+      },
+      {
+        "icon": "mdi:hammer-wrench",
+        "nombre": "Remodelación y Ampliación",
+        "descripcion": "Transformación y optimización de espacios existentes."
+      }
+    ],
+    "contacto": {
+      "redesSociales": ["https://www.facebook.com/ConstructoraWorldLJM"],
+      "ubicacion": [],
+      "emails": [],
+      "telefonos": [
+        {
+          "telefono": "+51 917 803 097",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "kc-construcciones",
+      "nombre": "K.C Construcciones",
+      "slogan": "Edificando calidad, superando expectativas.",
+      "categoria": "Construcción",
+      "tipo": "Empresa",
+      "genero": "femenino",
+      "paletaColores": ["#1A237E", "#00B0FF"]
+    },
+    "general": {
+      "acerca": "En K.C Construcciones, nos dedicamos a construir con los más altos estándares de calidad. Nuestra experiencia nos permite ofrecer soluciones constructivas innovadoras y eficientes. ¡Consíguela para tus proyectos!",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:bricks",
+        "nombre": "Obra Civil",
+        "descripcion": "Construcción de edificios, viviendas y estructuras de obra civil."
+      },
+      {
+        "icon": "mdi:brush",
+        "nombre": "Acabados de Construcción",
+        "descripcion": "Servicios de acabados interiores y exteriores de alta calidad."
+      },
+      {
+        "icon": "mdi:clipboard-check",
+        "nombre": "Gestión de Proyectos",
+        "descripcion": "Planificación, supervisión y control integral de proyectos."
+      }
+    ],
+    "contacto": {
+      "redesSociales": ["https://www.facebook.com/profile.php?id=61550804115530"],
+      "ubicacion": [],
+      "emails": [],
+      "telefonos": [
+        {
+          "telefono": "+51 906 974 085",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "maestros-contratistas",
+      "nombre": "Maestros Contratistas en General Bazan",
+      "slogan": "La experiencia es la base de una construcción sólida.",
+      "categoria": "Contratación",
+      "tipo": "Maestro",
+      "genero": "masculino",
+      "paletaColores": ["#546E7A", "#90A4AE"]
+    },
+    "general": {
+      "acerca": "Con años de experiencia en General Bazan, Maestros Contratistas ofrece soluciones integrales y personalizadas para tus proyectos de construcción y mantenimiento. ¡Consíguelo para tus obras!",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:home-variant",
+        "nombre": "Construcción de Viviendas",
+        "descripcion": "Construcción integral de casas y edificios residenciales."
+      },
+      {
+        "icon": "mdi:wrench",
+        "nombre": "Mantenimiento de Edificaciones",
+        "descripcion": "Servicios de mantenimiento preventivo y correctivo."
+      },
+      {
+        "icon": "mdi:lightbulb-on-outline",
+        "nombre": "Asesoría Técnica",
+        "descripcion": "Orientación experta en todas las etapas de tu proyecto."
+      }
+    ],
+    "contacto": {
+      "redesSociales": ["https://www.facebook.com/profile.php?id=61567109216711"],
+      "ubicacion": [],
+      "emails": [],
+      "telefonos": [
+        {
+          "telefono": "+51 995 293 340",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "drywall-proyecciones-ae",
+      "nombre": "Drywall proyecciones A.E",
+      "slogan": "Transformando espacios con soluciones ligeras y modernas.",
+      "categoria": "Drywall",
+      "tipo": "Empresa",
+      "genero": "femenino",
+      "paletaColores": ["#8D6E63", "#BCAAA4"]
+    },
+    "general": {
+      "acerca": "En Drywall Proyecciones A.E, somos especialistas en sistemas de construcción en seco. Ofrecemos soluciones prácticas y estéticas para tus proyectos. ¡Consíguela para tus ambientes!",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:wall",
+        "nombre": "Instalación de Drywall",
+        "descripcion": "Construcción de paredes, techos y divisiones con sistema drywall."
+      },
+      {
+        "icon": "mdi:ceiling-light",
+        "nombre": "Cielo Raso",
+        "descripcion": "Instalación de cielos rasos decorativos y funcionales."
+      },
+      {
+        "icon": "mdi:speaker",
+        "nombre": "Aislamiento Acústico y Térmico",
+        "descripcion": "Soluciones para mejorar el confort y la eficiencia energética."
+      }
+    ],
+    "contacto": {
+      "redesSociales": ["https://www.facebook.com/profile.php?id=61555802583251"],
+      "ubicacion": [],
+      "emails": [],
+      "telefonos": [
+        {
+          "telefono": "+51 993 396 830",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "disenos-3d-rauni",
+      "nombre": "Diseños 3D Rauni",
+      "slogan": "Visualiza tus ideas antes de construirlas.",
+      "categoria": "Diseño Arquitectónico",
+      "tipo": "Diseñador",
+      "genero": "masculino",
+      "paletaColores": ["#424242", "#757575"]
+    },
+    "general": {
+      "acerca": "Diseños 3D Rauni te ofrece la mejor visualización de tus proyectos arquitectónicos. Con tecnología avanzada, transformamos planos en imágenes y recorridos virtuales impactantes. ¡Consíguelo para tus presentaciones!",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:cube-outline",
+        "nombre": "Modelado 3D de Arquitectura",
+        "descripcion": "Creación de modelos tridimensionales de proyectos arquitectónicos."
+      },
+      {
+        "icon": "mdi:camera",
+        "nombre": "Renderización Fotorrealista",
+        "descripcion": "Generación de imágenes de alta calidad para visualizar tus diseños."
+      },
+      {
+        "icon": "mdi:walk",
+        "nombre": "Recorridos Virtuales",
+        "descripcion": "Experiencias inmersivas para explorar tus proyectos."
+      }
+    ],
+    "contacto": {
+      "redesSociales": ["https://www.facebook.com/profile.php?id=61557943495638"],
+      "ubicacion": [],
+      "emails": [],
+      "telefonos": [
+        {
+          "telefono": "+51 985 455 656",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "jstudio-co",
+      "nombre": "JStudio&CO",
+      "slogan": "Creamos espacios con pasión y diseño.",
+      "categoria": "Diseño Arquitectónico",
+      "tipo": "Empresa",
+      "genero": "femenino",
+      "paletaColores": ["#795548", "#A1887F"]
+    },
+    "general": {
+      "acerca": "JStudio&CO es una empresa de diseño de interiores apasionada por crear espacios que reflejen tu estilo y personalidad. Ofrecemos soluciones creativas y funcionales. ¡Consíguela para tus ambientes!",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:sofa",
+        "nombre": "Diseño de Interiores",
+        "descripcion": "Creación de ambientes interiores funcionales y estéticos."
+      },
+      {
+        "icon": "mdi:palette",
+        "nombre": "Decoración de Espacios",
+        "descripcion": "Selección de elementos decorativos para realzar tus ambientes."
+      },
+      {
+        "icon": "mdi:help-circle-outline",
+        "nombre": "Asesoría en Diseño",
+        "descripcion": "Orientación profesional para tus proyectos de diseño."
+      }
+    ],
+    "contacto": {
+      "redesSociales": ["https://www.facebook.com/JStudioandCO"],
+      "ubicacion": [],
+      "emails": [],
+      "telefonos": [
+        {
+          "telefono": "+51 910 475 752",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "elaboracion-javier",
+      "nombre": "Elaboración & Javier",
+      "slogan": "Manos expertas, resultados duraderos.",
+      "categoria": "Contratación",
+      "tipo": "Equipo",
+      "genero": "masculino",
+      "paletaColores": ["#263238", "#607D8B"]
+    },
+    "general": {
+      "acerca": "En Elaboración & Javier, somos un equipo experto en la fabricación y montaje de estructuras y carpintería metálica. Nuestra experiencia garantiza soluciones robustas y a medida. ¡Consíguelo para tus construcciones!",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:structure",
+        "nombre": "Estructuras Metálicas",
+        "descripcion": "Diseño y fabricación de estructuras metálicas para diversas aplicaciones."
+      },
+      {
+        "icon": "mdi:saw-blade",
+        "nombre": "Carpintería Metálica",
+        "descripcion": "Elaboración de puertas, ventanas, rejas y otros elementos metálicos."
+      },
+      {
+        "icon": "mdi:fire",
+        "nombre": "Soldadura Profesional",
+        "descripcion": "Servicios de soldadura de alta calidad para proyectos industriales y residenciales."
+      }
+    ],
+    "contacto": {
+      "redesSociales": ["https://www.facebook.com/profile.php?id=61552829417560"],
+      "ubicacion": [],
+      "emails": [],
+      "telefonos": [
+        {
+          "telefono": "+51 932 131 882",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "construcciones-generales-cornejos",
+      "nombre": "Construcciones Generales Cornejo's",
+      "slogan": "Construyendo con solidez, pensando en tu futuro.",
+      "categoria": "Construcción",
+      "tipo": "Empresa",
+      "genero": "femenino",
+      "paletaColores": ["#4E342E", "#795548"]
+    },
+    "general": {
+      "acerca": "Construcciones Generales Cornejo's ofrece servicios de construcción con un enfoque en la calidad y la satisfacción del cliente. Nos comprometemos con la solidez de cada proyecto. ¡Consíguela para tus obras!",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:shovel",
+        "nombre": "Movimiento de Tierras",
+        "descripcion": "Preparación del terreno para proyectos de construcción."
+      },
+      {
+        "icon": "mdi:foundation",
+        "nombre": "Cimentaciones",
+        "descripcion": "Construcción de bases sólidas para edificaciones seguras."
+      },
+      {
+        "icon": "mdi:bricks-outline",
+        "nombre": "Albañilería General",
+        "descripcion": "Trabajos de construcción con ladrillo, bloques y otros materiales."
+      }
+    ],
+    "contacto": {
+      "redesSociales": ["https://www.facebook.com/profile.php?id=61558863001737"],
+      "ubicacion": [],
+      "emails": [],
+      "telefonos": [
+        {
+          "telefono": "+51 987 432 262",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "pv-energy",
+      "nombre": "PV energy",
+      "slogan": "Iluminamos tu presente, potenciamos tu futuro.",
+      "categoria": "Electricidad",
+      "tipo": "Técnico",
+      "genero": "masculino",
+      "paletaColores": ["#03152A", "#69D6E9"]
+    },
+    "general": {
+      "acerca": "En PV Energy, brindamos soluciones eléctricas confiables y seguras en Lima.  Nuestro compromiso es ofrecer un servicio de calidad para hogares y negocios.",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "clarity:bolt-solid",
+        "nombre": "Instalación eléctrica",
+        "descripcion": "Diseño e instalación de sistemas eléctricos para hogares y negocios."
+      },
+      {
+        "icon": "mdi:electric-switch",
+        "nombre": "Reparación eléctrica",
+        "descripcion": "Diagnóstico y reparación de fallas eléctricas, asegurando el correcto funcionamiento."
+      }
+    ],
+    "contacto": {
+      "redesSociales": [
+        "https://www.facebook.com/energy.gv",
+        "https://www.instagram.com/p/DEpwKG5xkiu/"
+      ],
+      "ubicacion": [
+        {
+          "label": "Lima, Perú",
+          "link": "https://maps.app.goo.gl/mKuKNqi48YJ9URpb7"
+        }
+      ],
+      "emails": [
+        {
+          "email": "energyacdc18@gmail.com",
+          "primario": true
+        }
+      ],
+      "telefonos": [
+        {
+          "telefono": "+51 989 357 969",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "j&l",
+      "nombre": "J&L Electro Servicios Generales",
+      "slogan": "Conectamos tus ideas, protegemos tu espacio.",
+      "categoria": "Electricidad",
+      "tipo": "Empresa",
+      "genero": "femenino",
+      "paletaColores": ["#011248", "#fdb500"]
+    },
+    "general": {
+      "acerca": "J&L Electro Servicios Generales ofrece soluciones integrales en Piura: instalaciones eléctricas, cercos eléctricos, pintura, cámaras y alarmas.  Comprometidos con la calidad para tu hogar o negocio.",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "clarity:bolt-solid",
+        "nombre": "Instalaciones Eléctricas Expertas",
+        "descripcion": "Instalación y mantenimiento de sistemas eléctricos."
+      },
+      {
+        "icon": "mdi:security",
+        "nombre": "Cercos Eléctricos Seguros",
+        "descripcion": "Protección perimetral con cercos eléctricos."
+      },
+      {
+        "icon": "mdi:format-paint",
+        "nombre": "Pintura",
+        "descripcion": "Servicios de pintura interior y exterior."
+      },
+      {
+        "icon": "clarity:video-camera-solid",
+        "nombre": "Cámaras de Seguridad HD",
+        "descripcion": "Instalación de sistemas de videovigilancia."
+      },
+      {
+        "icon": "mdi:bell-ring-outline",
+        "nombre": "Alarmas Inteligentes",
+        "descripcion": "Sistemas de alarma avanzados."
+      }
+    ],
+    "contacto": {
+      "redesSociales": [
+        "https://www.facebook.com/profile.php?id=100070168122542",
+        "https://www.instagram.com/electro_servicios_generales"
+      ],
+      "ubicacion": [
+        {
+          "label": "Piura, Perú",
+          "link": "https://maps.app.goo.gl/KRGHSEFpBtAecf598"
+        }
+      ],
+      "emails": [
+        {
+          "email": "jylelectrossgg@gmail.com",
+          "primario": true
+        }
+      ],
+      "telefonos": [
+        {
+          "telefono": "+51 955 679 216",
+          "primario": true
+        },
+        {
+          "telefono": "+51 923 996 572",
+          "primario": false
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "acuivetlife",
+      "nombre": "Acuivetlife",
+      "slogan": "Cuidado integral para la salud de tus mascotas.",
+      "categoria": "Veterinaria",
+      "tipo": "Empresa",
+      "genero": "femenino",
+      "paletaColores": ["#015B7E", "#8ED2CE"]
+    },
+    "general": {
+      "acerca": "Acuivetlife esuna empresa veterinaria dedicada al cuidado integral de tus mascotas. Ofrecemos servicios de salud y bienestar con un equipo de profesionales amantes de los animales. ¡Consíguela para tus engreídos!",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "map:veterinary-care",
+        "nombre": "Capacitación Veterinaria",
+        "descripcion": "Programas de formación continua para veterinarios y técnicos, con enfoque en medicina moderna y buenas prácticas."
+      },
+      {
+        "icon": "mdi:projector-screen-outline",
+        "nombre": "Gestión de proyectos",
+        "descripcion": "Asesoría especializada en planificación y ejecución de proyectos veterinarios y clínicos."
+      },
+      {
+        "icon": "game-icons:animal-hide",
+        "nombre": "Sanidad y bioseguridad",
+        "descripcion": "Protocolos avanzados para prevención de enfermedades y control de higiene en entornos animales."
+      }
+    ],
+    "contacto": {
+      "redesSociales": ["https://www.facebook.com/Acuivetlife"],
+      "ubicacion": [
+        {
+          "label": "Sunampe, Sunampe, Peru",
+          "link": "https://maps.app.goo.gl/8bpM1JWcLi472CCq8"
+        }
+      ],
+      "emails": [
+        {
+          "email": "proyectos@acuivet.life",
+          "primario": true
+        }
+      ],
+      "telefonos": [
+        {
+          "telefono": "+51 966 975 484",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "animal-space",
+      "nombre": "Animal Space",
+      "slogan": "Un espacio dedicado al bienestar de tus compañeros.",
+      "categoria": "Veterinaria",
+      "tipo": "Empresa",
+      "genero": "femenino",
+      "paletaColores": ["#005AA9", "#ED2024"]
+    },
+    "general": {
+      "acerca": "Animal Space es una empresa pensada para el bienestar y la felicidad de tus mascotas. Ofrecemos servicios de guardería, paseo, entrenamiento y tienda para cubrir todas sus necesidades. ¡Consíguela para tus animalitos!",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "medical-icon:i-surgery",
+        "nombre": "Cirugías",
+        "descripcion": "Intervenciones quirúrgicas seguras con equipos de última generación y anestesia controlada."
+      },
+      {
+        "icon": "streamline:pets-allowed-solid",
+        "nombre": "Petshop",
+        "descripcion": "Productos premium para nutrición, higiene y diversión de tus mascotas."
+      },
+      {
+        "icon": "game-icons:blood",
+        "nombre": "Hemogramas",
+        "descripcion": "Análisis clínicos completos para diagnóstico preciso de enfermedades."
+      },
+      {
+        "icon": "mdi:radiology-box",
+        "nombre": "Rayos X",
+        "descripcion": "Radiografías digitales de alta resolución para evaluación ósea y de tejidos."
+      },
+      {
+        "icon": "medical-icon:ultrasound",
+        "nombre": "Ecografías",
+        "descripcion": "Diagnóstico por imágenes no invasivo para monitoreo de órganos internos."
+      },
+      {
+        "icon": "carbon:humidity",
+        "nombre": "Nebulizaciones",
+        "descripcion": "Terapia respiratoria para aliviar afecciones pulmonares y alergias."
+      },
+      {
+        "icon": "mdi:stethoscope",
+        "nombre": "Consultas y Tratamientos",
+        "descripcion": "Atención personalizada y planes de tratamiento adaptados a cada paciente."
+      },
+      {
+        "icon": "mdi:ambulance",
+        "nombre": "Sala de emergencias",
+        "descripcion": "Atención veterinaria urgente 24/7 con equipos de reanimación."
+      },
+      {
+        "icon": "mdi:dog-side",
+        "nombre": "Área de internamiento",
+        "descripcion": "Espacios climatizados para recuperación postoperatoria o tratamientos prolongados."
+      }
+    ],
+    "contacto": {
+      "redesSociales": ["https://www.facebook.com/VeterinariaAnimalSpaceSedeCarabayllo/"],
+      "ubicacion": [
+        {
+          "label": "Av. Lomas de Carabayllo Mz H Lote 3 Las Casuarinas, Carabayllo 07031",
+          "link": "https://maps.app.goo.gl/Qr7UAZoViC7vdgpu6"
+        }
+      ],
+      "emails": [
+        {
+          "email": "Veterinariaanimalspace@gmail.com",
+          "primario": true
+        }
+      ],
+      "telefonos": [
+        {
+          "telefono": "+51 989 786 349",
+          "primario": true
+        },
+        {
+          "telefono": "+51 932 325 583",
+          "primario": false
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "ma-salud",
+      "nombre": "MA Salud",
+      "slogan": "Tu bienestar es nuestra prioridad.",
+      "categoria": "Medicina",
+      "tipo": "Centro de diagnóstico",
+      "genero": "masculino",
+      "paletaColores": ["#C91A24", "#95A3AE"]
+    },
+    "general": {
+      "acerca": "MA Salud es una empresa médica comprometida con tu bienestar. Ofrecemos una amplia gama de servicios de salud con profesionales dedicados y atención de calidad. ¡Consíguela para tu cuidado!",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:human-pregnant",
+        "nombre": "Obstetricia",
+        "descripcion": "Acompañamiento y cuidado durante el embarazo, parto y postparto con especialistas en salud femenina."
+      },
+      {
+        "icon": "medical-icon:i-ultrasound",
+        "nombre": "Ecografías",
+        "descripcion": "Diagnóstico por imágenes de alta calidad para monitorear embarazos y diversas condiciones médicas."
+      },
+      {
+        "icon": "mdi:doctor",
+        "nombre": "Medicina General",
+        "descripcion": "Atención primaria integral para pacientes de todas las edades, diagnóstico y tratamiento de diversas patologías."
+      },
+      {
+        "icon": "mdi:virus-outline",
+        "nombre": "Pruebas COVID",
+        "descripcion": "Pruebas PCR y antígenos con resultados confiables y rápidos para detección del virus SARS-CoV-2."
+      },
+      {
+        "icon": "mdi:flask-outline",
+        "nombre": "Laboratorios",
+        "descripcion": "Análisis clínicos completos con tecnología avanzada para diagnóstico preciso de diversas condiciones."
+      },
+      {
+        "icon": "mdi:glasses",
+        "nombre": "Óptica",
+        "descripcion": "Exámenes de la vista, diagnóstico de problemas visuales y venta de lentes correctivos con asesoría especializada."
+      },
+      {
+        "icon": "mdi:radiology-box",
+        "nombre": "Radiografía",
+        "descripcion": "Estudios de imagenología para diagnóstico de fracturas, enfermedades pulmonares y otras condiciones."
+      },
+      {
+        "icon": "mdi:foot-print",
+        "nombre": "Podología",
+        "descripcion": "Cuidado especializado de los pies, tratamiento de uñas encarnadas, hongos y problemas biomecánicos."
+      },
+      {
+        "icon": "mdi:medical-bag",
+        "nombre": "Tópico",
+        "descripcion": "Atención inmediata para heridas, curaciones, inyecciones y procedimientos médicos menores."
+      }
+    ],
+    "contacto": {
+      "redesSociales": [
+        "https://www.facebook.com/profile.php?id=100088423399800",
+        "https://www.instagram.com/masalud.pe/"
+      ],
+      "ubicacion": [
+        {
+          "label": "Av. Nicolás Ayllón",
+          "link": "https://maps.app.goo.gl/Ubg9LCbpFYQcykjZ7"
+        }
+      ],
+      "emails": [
+        {
+          "email": "m.asalud161199@gmail.com",
+          "primario": true
+        }
+      ],
+      "telefonos": [
+        {
+          "telefono": "+51 975 209 025",
+          "primario": true
+        },
+        {
+          "telefono": "+51 939 008 847",
+          "primario": false
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "lotoboom",
+      "nombre": "LotoBoom",
+      "slogan": "Hoy puede ser tu día",
+      "categoria": "Azar",
+      "tipo": "Casa Rifera",
+      "genero": "femenino",
+      "paletaColores": ["#0D0D0D", "#F18624"]
+    },
+    "general": {
+      "acerca": "LotoBoom es tu espacio virtual de emoción y suerte, donde disfrutarás de vibrantes partidas de bingo y emocionantes rifas con la posibilidad de ganar fantásticos premios desde la comodidad de tu hogar.",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:star-shooting",
+        "nombre": "Bingo Estelar",
+        "descripcion": "Emocionantes partidas de bingo virtual donde la suerte te espera en cada bolilla."
+      },
+      {
+        "icon": "mdi:gift-open-outline",
+        "nombre": "Sorteos de la Alegría",
+        "descripcion": "Participa en nuestras divertidas rifas con fantásticos premios que te harán sonreír."
+      }
+    ],
+    "contacto": {
+      "redesSociales": [],
+      "ubicacion": [
+        {
+          "label": "Virtualmente en tu corazón",
+          "link": ""
+        }
+      ],
+      "emails": [],
+      "telefonos": [
+        {
+          "telefono": "+51 966 002 733",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "topocaj",
+      "nombre": "Topocaj",
+      "slogan": "Somos más que topógrafos",
+      "categoria": "Topografía",
+      "tipo": "Empresa",
+      "genero": "femenino",
+      "paletaColores": ["#0D0D0D", "#FD9526"]
+    },
+    "general": {
+      "acerca": "TOPOCAJ S.R.L. es una empresa especializada en servicios topográficos, geodésicos y fotogramétricos con más de 10 años de experiencia en el mercado nacional. Contamos con equipos de última generación y personal altamente calificado.",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "gis:globe-point",
+        "nombre": "Puntos Geodésicos",
+        "descripcion": "Establecimiento y medición de puntos geodésicos para sistemas de referencia precisos en proyectos de gran escala."
+      },
+      {
+        "icon": "carbon:map",
+        "nombre": "Elaboración de planos",
+        "descripcion": "Creación de planos topográficos, catastrales y urbanos con software especializado CAD y GIS."
+      },
+      {
+        "icon": "mdi:surveyor",
+        "nombre": "Levantamiento y replanteo",
+        "descripcion": "Servicios de levantamiento topográfico con estación total y replanteo de puntos con precisión milimétrica."
+      },
+      {
+        "icon": "fluent:drone-20-filled",
+        "nombre": "Fotogrametría",
+        "descripcion": "Fotogrametría con drones para modelado 3D, ortofotos y análisis territorial de alta precisión."
+      },
+      {
+        "icon": "icon-park-outline:adjust",
+        "nombre": "Calibración y mantenimiento",
+        "descripcion": "Servicio técnico especializado para equipos topográficos, calibración de estaciones totales y niveles."
+      }
+    ],
+    "contacto": {
+      "redesSociales": [
+        "https://www.facebook.com/topocajsrl",
+        "https://www.instagram.com/topocajsrl/"
+      ],
+      "ubicacion": [
+        {
+          "label": "Elías Aguirre 961, Chiclayo 14001",
+          "link": "https://maps.app.goo.gl/Hd2mr3KJjUQSGPjz9"
+        }
+      ],
+      "emails": [
+        {
+          "email": "topocajsrl@gmail.com",
+          "primario": true
+        }
+      ],
+      "telefonos": [
+        {
+          "telefono": "+51 984 598 565",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "tapi-mundo",
+      "nombre": "Tapi Mundo",
+      "slogan": "Destapamos lo mejor, enroscamos seguridad",
+      "categoria": "Tapas",
+      "tipo": "Empresa",
+      "genero": "femenino",
+      "paletaColores": ["#20263B", "#F2F2F2"]
+    },
+    "general": {
+      "acerca": "Nos especializamos en tapas pilfer de alta calidad, ofreciendo soluciones seguras para el cierre de envases. Usamos materiales resistentes y tecnología avanzada para garantizar protección contra manipulaciones.",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:factory",
+        "nombre": "Fabricación de tapas pilfer",
+        "descripcion": "Fabricamos tapas pilfer de alta calidad en diversos colores: negro, blanco, verde y dorado. Garantizamos seguridad y durabilidad para tus productos."
+      },
+      {
+        "icon": "mdi:printer-3d",
+        "nombre": "Personalización de tapas pilfer",
+        "descripcion": "Personalizamos tus tapas pilfer con logos, textos o diseños exclusivos. Disponible en colores negro, blanco, verde y dorado para que combines con tu marca."
+      }
+    ],
+    "contacto": {
+      "redesSociales": [
+        "https://www.facebook.com/profile.php?id=61573733201641",
+        "https://www.instagram.com/tapimundooficial"
+      ],
+      "ubicacion": [
+        {
+          "label": "Lima y provincia",
+          "link": "https://maps.app.goo.gl/D8TqfiHxsDZEMB9V8"
+        }
+      ],
+      "emails": [
+        {
+          "email": "tapimundoperu@gmail.com",
+          "primario": true
+        }
+      ],
+      "telefonos": [
+        {
+          "telefono": "+51 921 492 814",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "sarych",
+      "nombre": "Sarych",
+      "slogan": "Soluciones profesionales para tus necesidades de construcción y remodelación",
+      "categoria": "Tapas",
+      "tipo": "Empresa",
+      "genero": "femenino",
+      "paletaColores": ["#2A4365", "#F6AD55"]
+    },
+    "general": {
+      "acerca": "SARYCH es una empresa de construcción con más de una década de experiencia en el mercado, trabajando desde el 2010 y especializada en construcción, drywall, electricidad y pintura. Nuestro equipo de profesionales altamente capacitados se compromete a entregar proyectos de alta calidad, cumpliendo con los plazos establecidos y superando las expectativas de nuestros clientes.",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "maki:construction",
+        "nombre": "Construcción",
+        "descripcion": "Servicios completos de construcción desde cimientos hasta acabados finales. Proyectos residenciales y comerciales con los más altos estándares de calidad."
+      },
+      {
+        "icon": "mdi:wall",
+        "nombre": "Drywall",
+        "descripcion": "Instalación profesional de drywall para divisiones interiores, techos y diseños especiales. Trabajos limpios, precisos y con garantía."
+      },
+      {
+        "icon": "mdi:flash",
+        "nombre": "Electricidad",
+        "descripcion": "Instalaciones eléctricas seguras y eficientes. Desde cableado básico hasta sistemas complejos, cumpliendo con todas las normativas vigentes."
+      },
+      {
+        "icon": "mdi:format-paint",
+        "nombre": "Pintura",
+        "descripcion": "Servicios profesionales de pintura en interiores y exteriores. Aplicación de pinturas de alta calidad con técnicas modernas y acabados perfectos."
+      }
+    ],
+    "contacto": {
+      "redesSociales": [],
+      "ubicacion": [
+        {
+          "label": "Lima y provincia",
+          "link": "https://maps.app.goo.gl/D8TqfiHxsDZEMB9V8"
+        }
+      ],
+      "emails": [
+        {
+          "email": "contacto@sarych.com",
+          "primario": true
+        }
+      ],
+      "telefonos": [
+        {
+          "telefono": "+51 961 336 409",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "markyto",
+      "nombre": "Markyto Multiservicios",
+      "slogan": "Soluciones integrales para tu hogar",
+      "categoria": "Servicios Generales",
+      "tipo": "Técnico",
+      "genero": "masculino",
+      "paletaColores": ["#0D0D0D", "#F18A4F"]
+    },
+    "general": {
+      "acerca": "Markyto Multiservicios es tu aliado de confianza para el mantenimiento y mejora de tu hogar o negocio. Ofrecemos una amplia gama de servicios especializados, desde la reparación de electrodomésticos y sistemas de aire acondicionado, hasta instalaciones de gas, electricidad, gasfitería y trabajos de pintura.",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:washing-machine",
+        "nombre": "Electrodomésticos",
+        "descripcion": "Reparación y mantenimiento profesional de todo tipo de electrodomésticos: lavadoras, refrigeradoras, cocinas, microondas y más. Dejamos tus equipos como nuevos."
+      },
+      {
+        "icon": "mdi:air-conditioner",
+        "nombre": "Aire Acondicionado",
+        "descripcion": "Instalación, mantenimiento preventivo y correctivo de sistemas de aire acondicionado. Garantizamos un ambiente fresco y confortable en tu espacio."
+      },
+      {
+        "icon": "mdi:fire",
+        "nombre": "Instalaciones de gas residencial",
+        "descripcion": "Instalaciones de gas seguras y certificadas para hogares. Nos encargamos de todo, desde la revisión hasta la implementación de nuevas conexiones."
+      },
+      {
+        "icon": "mdi:flash",
+        "nombre": "Instalaciones eléctricas",
+        "descripcion": "Servicios eléctricos completos: instalaciones nuevas, reparaciones, mantenimiento, cortocircuitos, cableado y tableros. ¡Tu seguridad es nuestra prioridad!"
+      },
+      {
+        "icon": "mdi:pipe-wrench",
+        "nombre": "Gasfitería",
+        "descripcion": "Solución a problemas de gasfitería: fugas de agua, desatoros, instalaciones de griferías, sanitarios y sistemas de tuberías. Servicio rápido y eficaz."
+      },
+      {
+        "icon": "mdi:format-paint",
+        "nombre": "Trabajos de pintura",
+        "descripcion": "Servicios de pintura interior y exterior para renovar tus espacios. Acabados de alta calidad con pinturas duraderas y profesionales."
+      }
+    ],
+    "contacto": {
+      "redesSociales": ["https://www.facebook.com/profile.php?id=100063593832648"],
+      "ubicacion": [
+        {
+          "label": "Colina 653 Bellavista callao",
+          "link": "https://maps.app.goo.gl/VDpu4FTrr5vbi3Pv6"
+        }
+      ],
+      "emails": [
+        {
+          "email": "tecnicomarkyto@gmail.com",
+          "primario": true
+        }
+      ],
+      "telefonos": [
+        {
+          "telefono": "+51 967 626 428",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "limpet",
+      "nombre": "Grupo Limpet",
+      "slogan": "Impecables y Confiables.",
+      "categoria": "Limpieza",
+      "tipo": "Grupo",
+      "genero": "masculino",
+      "paletaColores": ["#0A6B3C", "#7BD30F"]
+    },
+    "general": {
+      "acerca": "En Grupo Limpet, transformamos espacios con limpieza profesional. Con años de experiencia, somos sinónimo de calidad y confianza en Lima, superando expectativas con soluciones a medida que garantizan ambientes impecables y productivos.",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "pixelarticons:building",
+        "nombre": "Limpieza Integral de Oficinas y Espacios Comerciales",
+        "descripcion": "Ofrecemos un servicio de limpieza profesional y completo para oficinas, locales comerciales y espacios corporativos. Nuestro equipo altamente capacitado garantiza ambientes impecables y saludables, utilizando productos de calidad y técnicas eficientes. Adaptamos nuestros servicios a sus necesidades específicas, creando un entorno de trabajo productivo y agradable."
+      }
+    ],
+    "contacto": {
+      "redesSociales": [],
+      "ubicacion": [
+        {
+          "label": "San Antonio Miraflores",
+          "link": "https://maps.app.goo.gl/wFDExvUc2Vsvx6Sf8"
+        }
+      ],
+      "emails": [
+        {
+          "email": "limpet.servicios1@gmail.com",
+          "primario": true
+        }
+      ],
+      "telefonos": [
+        {
+          "telefono": "+51 936 772 768",
+          "primario": true
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  },
+  {
+    "identidad": {
+      "id": "ayala",
+      "nombre": "Inmobiliaria Ayala",
+      "slogan": "Honradez y Trabajo Seguro",
+      "categoria": "Inmobiliaria",
+      "tipo": "Empresa",
+      "genero": "femenino",
+      "paletaColores": ["#0D0D0D", "#EFB810"]
+    },
+    "general": {
+      "acerca": "Inmobiliaria Ayala: Convertimos tus sueños en espacios. Diseñamos y remodelamos ambientes que inspiran, con honradez y seguridad. Reflejamos tu estilo en cada proyecto en Cusco, Perú.",
+      "mision": "",
+      "vision": ""
+    },
+    "servicios": [
+      {
+        "icon": "mdi:design",
+        "nombre": "Diseño y Remodelación de Interiores",
+        "descripcion": "Transformamos tus espacios en ambientes funcionales, estéticos y personalizados. Ofrecemos servicios completos de diseño y remodelación para hogares y negocios, desde la conceptualización hasta la ejecución, asegurando acabados de alta calidad y soluciones innovadoras que reflejan tu estilo y necesidades."
+      }
+    ],
+    "contacto": {
+      "redesSociales": [],
+      "ubicacion": [
+        {
+          "label": "Cusco, Perú",
+          "link": "https://maps.app.goo.gl/obmBa4ReCbFAfdoz9"
+        }
+      ],
+      "emails": [],
+      "telefonos": [
+        {
+          "telefono": "+51 904 543 330",
+          "primario": true
+        },
+        {
+          "telefono": "+51 984 440 374",
+          "primario": false
+        }
+      ]
+    },
+    "md": {
+      "mink": "g1",
+      "status": "inactivo",
+      "comprados": {
+        "mink": false
+      },
+      "alianza": "2025-06-01"
+    }
+  }
+]
